@@ -16,7 +16,7 @@ import socket
 import time
 
 # Sender function
-def sender():
+    def sender():
     sender_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     receiver_address = ('localhost', 12345)
 
@@ -39,7 +39,7 @@ def sender():
 
 
 # Receiver function
-def receiver():
+    def receiver():
     receiver_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     receiver_socket.bind(('localhost', 12345))
 
@@ -62,7 +62,7 @@ def receiver():
 
 
 # Run sender and receiver separately
-if __name__ == "__main__":
+    if __name__ == "__main__":
     import multiprocessing
     receiver_process = multiprocessing.Process(target=receiver)
     sender_process = multiprocessing.Process(target=sender)
