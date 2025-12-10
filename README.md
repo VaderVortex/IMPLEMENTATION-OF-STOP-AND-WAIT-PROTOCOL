@@ -1,9 +1,9 @@
-# IMPLEMENTATION-OF-STOP-AND-WAIT-PROTOCOL
-# EXP: 1(a)
-# DATE:
+# EXP: 2(a)—IMPLEMENTATION-OF-STOP-AND-WAIT-PROTOCOL
 # REG. No.: 212224040290
+
 # AIM:
 To write a python program to perform stop and wait protocol
+
 # ALGORITHM:
 1. Start the program.
 2. Get the frame size from the user
@@ -11,11 +11,9 @@ To write a python program to perform stop and wait protocol
 4. To send frames to server from the client side.
 5. If your frames reach the server it will send ACK signal to client otherwise it will sendNACK signal to client.
 6. Stop the program
-# PROGRAM:
-import socket
-import time
 
-# Sender function
+# PROGRAM:
+## Sender function
     def sender():
     sender_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     receiver_address = ('localhost', 12345)
@@ -38,7 +36,7 @@ import time
     sender_socket.close()
 
 
-# Receiver function
+## Receiver function
     def receiver():
     receiver_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     receiver_socket.bind(('localhost', 12345))
@@ -61,7 +59,7 @@ import time
     receiver_socket.close()
 
 
-# Run sender and receiver separately
+## Run sender and receiver separately
     if __name__ == "__main__":
     import multiprocessing
     receiver_process = multiprocessing.Process(target=receiver)
